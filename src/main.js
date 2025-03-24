@@ -58,3 +58,14 @@ loadMoreBtn.addEventListener('click', async () => {
     loader.classList.add('hidden');
   }
 });
+
+function smoothScroll() {
+  const galleryItem = document.querySelector('.gallery li');
+  if (galleryItem) {
+    const { height } = galleryItem.getBoundingClientRect();
+    window.scrollBy({
+      top: height * 2,
+      behavior: 'smooth',
+    });
+  }
+}
